@@ -35,6 +35,8 @@ By using this pattern, we can dynamically add features notifications to the comm
 
 ## Sequence Diagram
 
+We created a sequence diagram to gain a deeper understanding of the steps and exchanges involved in designing the application.
+
 ## Merise
 
 We carried out the Merise methodology to help us design the data tables and their relationships in order to prepare the database.
