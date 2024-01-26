@@ -24,9 +24,6 @@
         <a href="#decorator-design-pattern">Decorator Design Pattern</a>
     </li>
     <li>
-        <a href="#decorator-design-pattern">Decorator Design Pattern</a>
-    </li>
-    <li>
         <a href="#sequence-diagram">Sequence Diagram</a>
     </li>
     <li>
