@@ -40,3 +40,7 @@ We created a sequence diagram to gain a deeper understanding of the steps and ex
 ## Merise
 
 We carried out the Merise methodology to help us design the data tables and their relationships in order to prepare the database.
+
+## Wireframes
+
+Wireframes assisted us in envisioning and designing the application's user experience.
