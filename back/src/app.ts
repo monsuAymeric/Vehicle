@@ -71,67 +71,35 @@ class Command {
 //--- Factory ---
 
 //Factory class
-class Factory {
-  Id: number;
-  Name: string;
-  Engine: string;
-  Color: string;
+abstract class Factory {
+  public abstract factoryMethod(): Car;
 
-  constructor() {
-    this.Id = 0;
-    this.Name = "";
-    this.Engine = "";
-    this.Color = "";
-  }
+  Id: number = 0;
+  Name: string = "";
+  Engine: string = "";
+  Color: string = "";
 }
 
 //--- Creators classes ---
 
 //CybertruckCreator class
 class CybertruckCreator extends Factory {
-  Id: number;
-  Name: string;
-  Engine: string;
-  Color: string;
-
-  constructor() {
-    super();
-    this.Id = 0;
-    this.Name = "";
-    this.Engine = "";
-    this.Color = "";
+  public factoryMethod(): Car {
+    return new CybertruckConcrete();
   }
 }
 
 //ModelSCreator class
 class ModelSCreator extends Factory {
-  Id: number;
-  Name: string;
-  Engine: string;
-  Color: string;
-
-  constructor() {
-    super();
-    this.Id = 0;
-    this.Name = "";
-    this.Engine = "";
-    this.Color = "";
+  public factoryMethod(): Car {
+    return new ModelSConcrete();
   }
 }
 
 //ModelXCreator class
 class ModelXCreator extends Factory {
-  Id: number;
-  Name: string;
-  Engine: string;
-  Color: string;
-
-  constructor() {
-    super();
-    this.Id = 0;
-    this.Name = "";
-    this.Engine = "";
-    this.Color = "";
+  public factoryMethod(): Car {
+    return new ModelXConcrete();
   }
 }
 
@@ -139,6 +107,17 @@ class ModelXCreator extends Factory {
 
 //Car class
 interface Car {}
+
+//--- Concrete Products ---
+
+//Concrete product Cybertruck
+class CybertruckConcrete implements Car {}
+
+//Concrete product MedelS
+class ModelSConcrete implements Car {}
+
+//Concrete product ModelX
+class ModelXConcrete implements Car {}
 
 //--- Decorator---
 
