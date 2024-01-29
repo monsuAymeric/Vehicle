@@ -27,16 +27,23 @@
   border: 2px solid var(--color-second);
 }
 
-.bubble__selected{
+.bubble__selected {
   border: 2px solid var(--color-third);
 }
 
-.list__div{
+.list__div {
   margin-top: 50px;
 }
-.list__container{
+.list__container {
   display: flex;
   gap: 15px;
   align-items: center;
   margin-top: 15px;
+}
+
+.command__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }

@@ -110,6 +110,7 @@ button {
   border-radius: 20px;
   border: 2px solid var(--color-second);
   text-transform: uppercase;
+  width: fit-content;
 }
 img {
   width: 100%;

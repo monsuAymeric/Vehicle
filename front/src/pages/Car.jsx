@@ -44,6 +44,9 @@ export default function Car() {
                 </div>
               </div>
             </div>
+            <div className="command__div">
+              <button className="btn">Commander</button>
+            </div>
           </section>
         ) : (
           <p>Product not found</p>
