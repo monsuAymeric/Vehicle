@@ -10,6 +10,18 @@ export default function Car() {
   const { name } = useParams();
   const product = datas.find((p) => p.name === name);
 
+  // State to track selected color and city
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedCity, setSelectedCity] = useState(null);
+
+  const handleColorClick = (color) => {
+    setSelectedColor(color === selectedColor ? null : color);
+  };
+
+  const handleCityClick = (city) => {
+    setSelectedCity(city === selectedCity ? null : city);
+  };
+
   return (
     <main>
       <div>
@@ -22,13 +34,16 @@ export default function Car() {
               <div className="list__div">
                 <h2>Colors:</h2>
                 <div className="list__container">
-                  {colors.map((item) => {
-                    return (
-                      <button key={item.id} title={`Color: ${item.name}`}>
-                        {item.name}
-                      </button>
-                    );
-                  })}
+                  {colors.map((item) => (
+                    <button
+                      key={item.id}
+                      title={`Color: ${item.name}`}
+                      className={selectedColor === item.name ? "btn__selected" : "btn"}
+                      onClick={() => handleColorClick(item.name)}
+                    >
+                      {item.name}
+                    </button>
+                  ))}
                 </div>
               </div>
               <div className="list__div">
@@ -36,7 +51,12 @@ export default function Car() {
                 <div className="list__container">
                   {cities.map((item) => {
                     return (
-                      <button key={item.id} title={`City: ${item.name}`}>
+                      <button
+                        key={item.id}
+                        title={`City: ${item.name}`}
+                        className={selectedCity === item.name ? "btn__selected" : "btn"}
+                        onClick={() => handleCityClick(item.name)}
+                      >
                         {item.name}
                       </button>
                     );
@@ -45,7 +65,12 @@ export default function Car() {
               </div>
             </div>
             <div className="command__div">
-              <button className="btn">Commander</button>
+              <button
+                className="btn"
+                onClick={() => console.log("Command clicked")}
+              >
+                Commander
+              </button>
             </div>
           </section>
         ) : (

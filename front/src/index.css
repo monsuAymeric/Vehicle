@@ -101,17 +101,25 @@ button {
   background: transparent;
   font-family: var(--font);
 }
-.btn {
+.btn,
+.btn__selected {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-second);
-  color: var(--color-first);
   padding: 10px 20px 10px 20px;
   border-radius: 20px;
-  border: 2px solid var(--color-second);
   text-transform: uppercase;
   width: fit-content;
+}
+.btn {
+  background-color: var(--color-second);
+  color: var(--color-first);
+  border: 2px solid var(--color-second);
+}
+.btn__selected {
+  background-color: var(--color-third);
+  color: var(--color-first);
+  border: 2px solid var(--color-third);
 }
 img {
   width: 100%;

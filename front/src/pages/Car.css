@@ -47,3 +47,7 @@
   align-items: center;
   margin-top: 100px;
 }
+.selected {
+  background-color: var(--color-second);
+  color: var(--color-first);
+}
