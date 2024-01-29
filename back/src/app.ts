@@ -123,8 +123,5 @@ class ModelXConcrete implements Car {}
 
 //Notifier class
 class Notifier {
-  Notification: string;
-  constructor() {
-    this.Notification = "";
-  }
+  Notification: string = "";
 }
