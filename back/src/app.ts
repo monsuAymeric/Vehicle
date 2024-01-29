@@ -106,18 +106,35 @@ class ModelXCreator extends Factory {
 //--- Interface ---
 
 //Car class
-interface Car {}
+interface Car {
+  getDetails(): string;
+}
 
 //--- Concrete Products ---
 
 //Concrete product Cybertruck
-class CybertruckConcrete implements Car {}
+class CybertruckConcrete implements Car {
+  getDetails() {
+    // Implement getDetails logic for Cybertruck
+    return "Cybertruck details";
+  }
+}
 
 //Concrete product MedelS
-class ModelSConcrete implements Car {}
+class ModelSConcrete implements Car {
+  getDetails() {
+    // Implement getDetails logic for Cybertruck
+    return "ModelS details";
+  }
+}
 
 //Concrete product ModelX
-class ModelXConcrete implements Car {}
+class ModelXConcrete implements Car {
+  getDetails() {
+    // Implement getDetails logic for Cybertruck
+    return "ModelX details";
+  }
+}
 
 //--- Decorator---
 
