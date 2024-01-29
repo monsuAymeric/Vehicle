@@ -33,3 +33,105 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
 });
+
+//--- Classes ---
+
+//Users class
+class Users {
+  Id: number;
+  Firstname: string;
+  Lastname: string;
+  Email: string;
+  Password: string;
+
+  constructor() {
+    this.Id = 0;
+    this.Firstname = "";
+    this.Lastname = "";
+    this.Email = "";
+    this.Password = "";
+  }
+}
+
+//Command class
+class Command {
+  Id: number;
+  IsValid: Boolean;
+  PlaceDelivery: string;
+  Status: string;
+
+  constructor() {
+    this.Id = 0;
+    this.IsValid = true;
+    this.PlaceDelivery = "";
+    this.Status = "";
+  }
+}
+
+//--- Factory ---
+
+//Factory class
+class Factory {
+  Id: number;
+  Name: string;
+  Engine: string;
+  Color: string;
+
+  constructor() {
+    this.Id = 0;
+    this.Name = "";
+    this.Engine = "";
+    this.Color = "";
+  }
+}
+
+//--- Creators classes ---
+
+//CybertruckCreator class
+class CybertruckCreator {
+  Id: number;
+  Name: string;
+  Engine: string;
+  Color: string;
+
+  constructor() {
+    this.Id = 0;
+    this.Name = "";
+    this.Engine = "";
+    this.Color = "";
+  }
+}
+
+//ModelSCreator class
+class ModelSCreator {
+  Id: number;
+  Name: string;
+  Engine: string;
+  Color: string;
+
+  constructor() {
+    this.Id = 0;
+    this.Name = "";
+    this.Engine = "";
+    this.Color = "";
+  }
+}
+
+//ModelXCreator class
+class ModelXCreator {
+  Id: number;
+  Name: string;
+  Engine: string;
+  Color: string;
+
+  constructor() {
+    this.Id = 0;
+    this.Name = "";
+    this.Engine = "";
+    this.Color = "";
+  }
+}
+
+//--- Interface ---
+//Car class
+interface Car {}
