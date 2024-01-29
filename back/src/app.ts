@@ -133,5 +133,16 @@ class ModelXCreator {
 }
 
 //--- Interface ---
+
 //Car class
 interface Car {}
+
+//--- Decorator---
+
+//Notifier class
+class Notifier {
+  Notification: string;
+  constructor() {
+    this.Notification = "";
+  }
+}
