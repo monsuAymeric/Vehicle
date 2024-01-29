@@ -99,6 +99,7 @@ button {
 button {
   cursor: pointer;
   background: transparent;
+  font-family: var(--font);
 }
 .btn {
   display: flex;
