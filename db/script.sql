@@ -57,21 +57,11 @@ CREATE TABLE
         idCommand SERIAL,
         isValid BOOLEAN NOT NULL,
         placeDelivery VARCHAR(50) NOT NULL,
-        status VARCHAR(20) NOT NULL,
+        statusCommand VARCHAR(20) NOT NULL,
         idCar INTEGER NOT NULL,
         idUser INTEGER NOT NULL,
-        idColor INTEGER NOT NULL,
-        idModel INTEGER NOT NULL,
-        idAdress INTEGER NOT NULL,
-        idEngine INTEGER NOT NULL,
-        idPrice FLOAT NOT NULL,
         PRIMARY KEY (idCommand),
         UNIQUE (idCar),
         FOREIGN KEY (idCar) REFERENCES Cars (idCar),
-        FOREIGN KEY (idUser) REFERENCES Users (idUser),
-        FOREIGN KEY (idColor) REFERENCES Cars (idColor),
-        FOREIGN KEY (idModel) REFERENCES Cars (idModel),
-        FOREIGN KEY (idAdress) REFERENCES Cars (idAdress),
-        FOREIGN KEY (idEngine) REFERENCES Cars (idEngine),
-        FOREIGN KEY (idPrice) REFERENCES Cars (idPrice)
+        FOREIGN KEY (idUser) REFERENCES Users (idUser)
     );
