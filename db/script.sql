@@ -130,3 +130,19 @@ INSERT INTO
     Engine (horsePower)
 VALUES
     (1500);
+
+-- Create Models datas
+INSERT INTO
+    Models (name)
+VALUES
+    ('Cybertruck');
+
+INSERT INTO
+    Models (name)
+VALUES
+    ('Model-S');
+
+INSERT INTO
+    Models (name)
+VALUES
+    ('Model-X');
