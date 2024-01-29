@@ -26,7 +26,7 @@ export default function Header() {
   ];
 
   return (
-    <header>
+    <header className="container">
       <nav className="nav container__width">
         <Logo />
         <div className="hamburger" onClick={showNavBar} ref={hamburgerRef}>

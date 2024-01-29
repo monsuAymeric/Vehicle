@@ -2,6 +2,9 @@ header {
   width: 100%;
   background-color: var(--color-first);
   z-index: 5;
+  position: fixed;
+  top: 0;
+  margin: auto;
 }
 /*Nav*/
 nav {
