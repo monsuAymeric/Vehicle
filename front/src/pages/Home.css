@@ -1,0 +1,26 @@
+.cars {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.car__card {
+  display: flex;
+  gap: 20px;
+}
+.car__infos {
+  display: flex;
+  flex-direction: column;
+}
+.car__infos p {
+  max-height: 100px;
+  overflow: auto;
+}
+
+@media (max-width: 600px) {
+  .car__card {
+    flex-direction: column;
+    gap: 25px;
+  }
+}

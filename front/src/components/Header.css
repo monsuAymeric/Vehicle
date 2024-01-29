@@ -1,0 +1,125 @@
+header {
+  width: 100%;
+  background-color: var(--color-first);
+  z-index: 5;
+}
+/*Nav*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  height: 100px;
+  background-color: var(--color-first);
+  overflow: hidden;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.hamburger {
+  display: none;
+}
+.navbar,
+.navLink {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.navbara {
+  text-transform: uppercase;
+}
+.navbar__li {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  /*Hamburger Menu*/
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .line {
+    height: 3px;
+    background-color: var(--color-second);
+    margin: 5px 0;
+    transition: var(--transition);
+  }
+  .line1 {
+    width: 15px;
+  }
+  .line2 {
+    width: 30px;
+  }
+  .line3 {
+    width: 15px;
+    transform: translateX(15px);
+  }
+  .active > .line {
+    background-color: var(--color-second);
+  }
+  .active > .line1 {
+    transform: rotate(225deg) translate(-6px, -6px);
+    width: 30px;
+  }
+  .active > .line2 {
+    width: 0;
+  }
+  .active > .line3 {
+    transform: rotate(-225deg) translate(-5px, 5px);
+    width: 30px;
+  }
+  .navLink {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 80%;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: var(--color-third);
+    transition: 1s;
+    transform: translateX(150vw);
+    height: 100vh;
+    animation: 1s navbar linear forwards;
+  }
+  @keyframes navbar {
+    0% {
+      opacity: 0;
+    }
+    99% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .navbar.active {
+    transform: translateX(0vw);
+  }
+  .navbara {
+    font-size: 2.5rem;
+    color: var(--color-first);
+    font-weight: bold;
+  }
+  .navbar .btn {
+    background: transparent;
+    padding: 0;
+    border: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  .navbar__li:hover > .navbar__line {
+    width: 0%;
+  }
+}
