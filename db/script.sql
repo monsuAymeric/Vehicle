@@ -72,3 +72,29 @@ INSERT INTO
     Users (firstname, lastname, email, password)
 VALUES
     ('Elon', 'Musk', 'elonmusk@tesla.com', 'password');
+
+-- Create Colors datas
+INSERT INTO
+    Colors (name)
+VALUES
+    ('White');
+
+INSERT INTO
+    Colors (name)
+VALUES
+    ('Black');
+
+INSERT INTO
+    Colors (name)
+VALUES
+    ('Blue');
+
+INSERT INTO
+    Colors (name)
+VALUES
+    ('Red');
+
+INSERT INTO
+    Colors (name)
+VALUES
+    ('Grey');
