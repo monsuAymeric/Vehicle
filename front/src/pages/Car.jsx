@@ -22,6 +22,21 @@ export default function Car() {
     setSelectedCity(city === selectedCity ? null : city);
   };
 
+  const handleCommandClick = () => {
+    if (selectedColor && selectedCity) {
+      console.log(
+        "Command clicked with color:",
+        selectedColor,
+        "and city:",
+        selectedCity
+      );
+    } else {
+      console.log(
+        "Please select both color and city before clicking Commander"
+      );
+    }
+  };
+
   return (
     <main>
       <div>
@@ -38,7 +53,9 @@ export default function Car() {
                     <button
                       key={item.id}
                       title={`Color: ${item.name}`}
-                      className={selectedColor === item.name ? "btn__selected" : "btn"}
+                      className={
+                        selectedColor === item.name ? "btn__selected" : "btn"
+                      }
                       onClick={() => handleColorClick(item.name)}
                     >
                       {item.name}
@@ -54,7 +71,9 @@ export default function Car() {
                       <button
                         key={item.id}
                         title={`City: ${item.name}`}
-                        className={selectedCity === item.name ? "btn__selected" : "btn"}
+                        className={
+                          selectedCity === item.name ? "btn__selected" : "btn"
+                        }
                         onClick={() => handleCityClick(item.name)}
                       >
                         {item.name}
@@ -65,10 +84,7 @@ export default function Car() {
               </div>
             </div>
             <div className="command__div">
-              <button
-                className="btn"
-                onClick={() => console.log("Command clicked")}
-              >
+              <button className="btn" onClick={handleCommandClick}>
                 Commander
               </button>
             </div>
