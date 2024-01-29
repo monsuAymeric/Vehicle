@@ -98,3 +98,35 @@ INSERT INTO
     Colors (name)
 VALUES
     ('Grey');
+
+-- Create Adresses datas
+INSERT INTO
+    Adress (name)
+VALUES
+    ('Valenciennes');
+
+INSERT INTO
+    Adress (name)
+VALUES
+    ('Paris');
+
+INSERT INTO
+    Adress (name)
+VALUES
+    ('Lille');
+
+-- Create Engine datas
+INSERT INTO
+    Engine (horsePower)
+VALUES
+    (200);
+
+INSERT INTO
+    Engine (horsePower)
+VALUES
+    (400);
+
+INSERT INTO
+    Engine (horsePower)
+VALUES
+    (1500);
