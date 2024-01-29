@@ -88,13 +88,14 @@ class Factory {
 //--- Creators classes ---
 
 //CybertruckCreator class
-class CybertruckCreator {
+class CybertruckCreator extends Factory {
   Id: number;
   Name: string;
   Engine: string;
   Color: string;
 
   constructor() {
+    super();
     this.Id = 0;
     this.Name = "";
     this.Engine = "";
@@ -103,13 +104,14 @@ class CybertruckCreator {
 }
 
 //ModelSCreator class
-class ModelSCreator {
+class ModelSCreator extends Factory {
   Id: number;
   Name: string;
   Engine: string;
   Color: string;
 
   constructor() {
+    super();
     this.Id = 0;
     this.Name = "";
     this.Engine = "";
@@ -118,13 +120,14 @@ class ModelSCreator {
 }
 
 //ModelXCreator class
-class ModelXCreator {
+class ModelXCreator extends Factory {
   Id: number;
   Name: string;
   Engine: string;
   Color: string;
 
   constructor() {
+    super();
     this.Id = 0;
     this.Name = "";
     this.Engine = "";
