@@ -1,3 +1,4 @@
+-- Create tables
 CREATE TABLE
     Users (
         idUser SERIAL,
@@ -65,3 +66,9 @@ CREATE TABLE
         FOREIGN KEY (idCar) REFERENCES Cars (idCar),
         FOREIGN KEY (idUser) REFERENCES Users (idUser)
     );
+
+-- Create Users datas
+INSERT INTO
+    Users (firstname, lastname, email, password)
+VALUES
+    ('Elon', 'Musk', 'elonmusk@tesla.com', 'password');
