@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
-import Form from "../components/Form";
+import FormSignUp from "../components/FormSignUp";
 
 export default function SignUp() {
   const inputRef = useRef(null);
@@ -20,7 +20,7 @@ export default function SignUp() {
             </Link>
           </div>
         </div>
-        <Form />
+        <FormSignUp />
       </section>
     </main>
   );

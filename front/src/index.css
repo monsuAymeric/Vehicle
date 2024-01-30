@@ -102,7 +102,8 @@ button {
   font-family: var(--font);
 }
 .btn,
-.btn__selected {
+.btn__selected,
+.btn__inversed {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,16 +122,29 @@ button {
   color: var(--color-first);
   border: 2px solid var(--color-third);
 }
+.btn__inversed {
+  background-color: var(--color-first);
+  color: var(--color-second);
+  border: 2px solid var(--color-first);
+  border: 2px solid var(--color-second);
+  text-transform: none;
+  width: auto;
+}
+
+/*Images*/
 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: var(--transition);
 }
+
+/*Links*/
 .link {
   text-decoration: underline;
 }
 
+/*Logo*/
 .logo {
   height: 30px;
   z-index: 10;
@@ -138,6 +152,25 @@ img {
 .logo > img {
   height: 30px;
   width: 30px;
+}
+
+/*Form*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input {
+  font-size: 16px;
+  font-family: var(--font);
+}
+form > button {
+  margin-top: 50px;
 }
 
 /*Mobile*/
