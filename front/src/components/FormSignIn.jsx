@@ -1,14 +1,12 @@
 import React, { useState, useRef } from "react";
 
-export default function FormSignUp() {
+export default function FormSignIn() {
   const inputRef = useRef(null);
   const handleSubmitButton = () => {
     alert(inputRef.current.value);
   };
 
   const [formData, setFormData] = useState({
-    lastname: "",
-    firstname: "",
     email: "",
     password: "",
   });
@@ -25,28 +23,6 @@ export default function FormSignUp() {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Last Name:
-        <input
-          className="btn__inversed"
-          type="text"
-          name="lastname"
-          value={formData.lastname}
-          onChange={handleChange}
-          autoComplete="Last Name"
-        />
-      </label>
-      <label>
-        First Name:
-        <input
-          className="btn__inversed"
-          type="text"
-          name="firstname"
-          value={formData.firstname}
-          onChange={handleChange}
-          autoComplete="First Name"
-        />
-      </label>
       <label>
         Email:
         <input
@@ -70,7 +46,7 @@ export default function FormSignUp() {
         />
       </label>
       <button className="btn" type="submit">
-        Sign Up
+        Sign In
       </button>
     </form>
   );

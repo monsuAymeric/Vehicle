@@ -1,13 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
 import FormSignUp from "../components/FormSignUp";
 
 export default function SignUp() {
-  const inputRef = useRef(null);
-  const handleSubmitButton = () => {
-    alert(inputRef.current.value);
-  };
   return (
     <main>
       <section className="signup__section">
