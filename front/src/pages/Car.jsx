@@ -30,8 +30,14 @@ export default function Car() {
         "and city:",
         selectedCity
       );
+      alert("Command passed.");
     } else {
-      console.log("Please select both color and city before clicking Commander");
+      console.log(
+        "Please select both color and city before clicking the command button."
+      );
+      alert(
+        "Please select both color and city before clicking the command button."
+      );
     }
   };
 
@@ -83,7 +89,7 @@ export default function Car() {
             </div>
             <div className="command__div">
               <button className="btn" onClick={handleCommandClick}>
-                Commander
+                Command
               </button>
             </div>
           </section>
