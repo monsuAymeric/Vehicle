@@ -24,14 +24,14 @@ export default function Car() {
 
   const handleCommandClick = () => {
     if (selectedColor && selectedCity) {
-      alert(
+      console.log(
         "Command clicked with color:",
         selectedColor,
         "and city:",
         selectedCity
       );
     } else {
-      alert("Please select both color and city before clicking Commander");
+      console.log("Please select both color and city before clicking Commander");
     }
   };
 
