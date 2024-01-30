@@ -7,6 +7,12 @@ class Users {
   Lastname: string;
   Email: string;
   Password: string;
+  Login() {
+
+  };
+  CreateCommand() {
+
+  };
 
   constructor() {
     this.Id = 0;
@@ -23,6 +29,15 @@ class Command {
   IsValid: Boolean;
   PlaceDelivery: string;
   Status: string;
+  GetCommand() {
+
+  }
+  GetPlaceDelivery() {
+
+  }
+  UpdateStatus(Notifications) {
+
+  }
 
   constructor() {
     this.Id = 0;
@@ -38,10 +53,26 @@ class Command {
 abstract class Factory {
   public abstract factoryMethod(): Car;
 
-  Id: number = 0;
-  Name: string = "";
-  Engine: number = 0;
-  Color: string = "";
+  Id: number;
+  Name: string;
+  Engine: number;
+  Color: string;
+  CreateCar() {
+
+  }
+  GetColor(Command) {
+
+  }
+  GetMotor(Command){
+
+  }
+
+  constructor() {
+    this.Id = 0;
+    this.Name = "";
+    this.Engine = 0;
+    this.Color = "";
+  }
 }
 
 //--- Creators classes ---
@@ -75,7 +106,7 @@ interface Car {
   Name: string;
   Engine: number;
   Color: string;
-  getDetails(): string;
+  getDetails(Car): string;
 }
 
 //--- Concrete Products ---
@@ -86,7 +117,7 @@ class CybertruckConcrete implements Car {
   Name: string;
   Engine: number = 0;
   Color: string;
-  getDetails() {
+  getDetails(Car): string {
     // Implement getDetails logic for Cybertruck
     return (
       "Cybertruck details: " +
@@ -100,15 +131,23 @@ class CybertruckConcrete implements Car {
       this.Color
     );
   }
+
+  constructor() {
+    this.Id = 0;
+    this.Name = "";
+    this.Engine = 0;
+    this.Color = "";
+  }
 }
 
-//Concrete product MedelS
+//Concrete product ModelS
+
 class ModelSConcrete implements Car {
   Id: number;
   Name: string;
   Engine: number = 0;
   Color: string;
-  getDetails() {
+  getDetails(Car): string {
     // Implement getDetails logic for Cybertruck
     return (
       "Cybertruck details: " +
@@ -130,7 +169,7 @@ class ModelXConcrete implements Car {
   Name: string;
   Engine: number = 0;
   Color: string;
-  getDetails() {
+  getDetails(Car): string {
     // Implement getDetails logic for Cybertruck
     return (
       "Cybertruck details: " +
@@ -151,6 +190,9 @@ class ModelXConcrete implements Car {
 //Notifier class
 class Notifier {
   Notification: string = "";
+  Send(Notification): void {
+
+  };
 }
 
 // Object Cybertruck created example
