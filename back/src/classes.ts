@@ -103,10 +103,12 @@ class ModelXCreator extends Factory {
 //Car class
 interface Car {
   Id: number;
-  Name: string;
-  Engine: number;
   Color: string;
-  getDetails(Car): string;
+  Name: string;
+  Adress: string;
+  Engine: number;
+  Price: DoubleRange;
+  getDetails(carId);
 }
 
 //--- Concrete Products ---
@@ -114,21 +116,15 @@ interface Car {
 //Concrete product Cybertruck
 class CybertruckConcrete implements Car {
   Id: number;
-  Name: string;
-  Engine: number = 0;
   Color: string;
-  getDetails(Car): string {
+  Name: string;
+  Adress: string;
+  Engine: number;
+  Price: DoubleRange;
+  getDetails(Car) {
     // Implement getDetails logic for Cybertruck
     return (
-      "Cybertruck details: " +
-      " id: " +
-      this.Id +
-      " name: " +
-      this.Name +
-      " engine: " +
-      this.Engine +
-      " color: " +
-      this.Color
+      `Cybertruck details:  id: ${this.Id} name: ${this.Name} engine: ${this.Engine} color: ${this.Color}`
     );
   }
 
@@ -144,21 +140,15 @@ class CybertruckConcrete implements Car {
 
 class ModelSConcrete implements Car {
   Id: number;
-  Name: string;
-  Engine: number = 0;
   Color: string;
+  Name: string;
+  Adress: string;
+  Engine: number;
+  Price: DoubleRange;
   getDetails(Car): string {
     // Implement getDetails logic for Cybertruck
     return (
-      "Cybertruck details: " +
-      " id: " +
-      this.Id +
-      " name: " +
-      this.Name +
-      " engine: " +
-      this.Engine +
-      " color: " +
-      this.Color
+      `Cybertruck details:  id: ${this.Id} name: ${this.Name} engine: ${this.Engine} color: ${this.Color}`
     );
   }
 }
@@ -166,21 +156,15 @@ class ModelSConcrete implements Car {
 //Concrete product ModelX
 class ModelXConcrete implements Car {
   Id: number;
-  Name: string;
-  Engine: number = 0;
   Color: string;
+  Name: string;
+  Adress: string;
+  Engine: number;
+  Price: DoubleRange;
   getDetails(Car): string {
     // Implement getDetails logic for Cybertruck
     return (
-      "Cybertruck details: " +
-      " id: " +
-      this.Id +
-      " name: " +
-      this.Name +
-      " engine: " +
-      this.Engine +
-      " color: " +
-      this.Color
+      `Cybertruck details:  id: ${this.Id} name: ${this.Name} engine: ${this.Engine} color: ${this.Color}`
     );
   }
 }
@@ -203,4 +187,4 @@ myCybertruck.Name = "Cybertruck";
 myCybertruck.Engine = 200;
 myCybertruck.Color = "Grey";
 
-console.log(myCybertruck.getDetails());
+console.log(myCybertruck.getDetails(this.Car));
