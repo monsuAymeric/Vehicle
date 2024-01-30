@@ -127,6 +127,9 @@ img {
   object-fit: cover;
   transition: var(--transition);
 }
+.link {
+  text-decoration: underline;
+}
 
 .logo {
   height: 30px;
