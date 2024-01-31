@@ -78,22 +78,41 @@ export default function Car() {
     setSelectedCity(city === selectedCity ? null : city);
   };
 
+  // State to track user authentication
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Simulating authentication logic (replace with actual authentication check)
+    const checkAuthentication = () => {
+      // Replace the following line with your actual authentication check
+      const userIsAuthenticated = true; /* Your authentication check */
+      setIsAuthenticated(userIsAuthenticated);
+    };
+
+    checkAuthentication();
+  }, []);
+
   const handleCommandClick = () => {
-    if (selectedColor && selectedCity) {
-      console.log(
-        "Command clicked with color:",
-        selectedColor,
-        "and city:",
-        selectedCity
-      );
-      alert("Command passed.");
+    if (isAuthenticated) {
+      if (selectedColor && selectedCity) {
+        console.log(
+          "Command clicked with color:",
+          selectedColor,
+          "and city:",
+          selectedCity
+        );
+        alert("Command passed.");
+      } else {
+        console.log(
+          "Please select both color and city before clicking the command button."
+        );
+        alert(
+          "Please select both color and city before clicking the command button."
+        );
+      }
     } else {
-      console.log(
-        "Please select both color and city before clicking the command button."
-      );
-      alert(
-        "Please select both color and city before clicking the command button."
-      );
+      // User not authenticated, show an alert
+      alert("You are not connected, please sign in to command.");
     }
   };
 
