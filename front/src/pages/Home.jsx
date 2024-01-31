@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
-import datas from "../datas/Products.json";
+// import datas from "../datas/Products.json";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  //--- Fetch car datas ----
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/car");
+        const data = await response.json();
+        setCars(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <main>
       <section>
@@ -16,15 +33,16 @@ export default function Home() {
           </p>
         </div>
         <div className="cars">
-          {datas.map((product) => {
+          {/*Map all cars */}
+          {cars.map((car) => {
             return (
-              <article className="car__card" key={product.id}>
-                <Link to={`/car/${product.name}`}>
-                  <Card image={product.image} alt={product.name} />
+              <article className="car__card" key={car.id}>
+                <Link to={`/car/${car.name}`}>
+                  <Card image={car.image} alt={car.name} />
                 </Link>
                 <div className="car__infos">
-                  <h2>{product.title}</h2>
-                  <p>{product.text}</p>
+                  <h2>{car.title}</h2>
+                  <p>{car.text}</p>
                 </div>
               </article>
             );

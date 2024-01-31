@@ -1,14 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Car.css";
 import { useParams } from "react-router-dom";
-import datas from "../datas/Products.json";
-import colors from "../datas/Colors.json";
-import cities from "../datas/City.json";
+// import datas from "../datas/Products.json";
+// import colors from "../datas/Colors.json";
+// import cities from "../datas/City.json";
 import Card from "../components/Card";
 
 export default function Car() {
+  //--- Fetch car datas ----
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/car/:id");
+        const data = await response.json();
+        setCars(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  //--- Fetch colors datas ----
+  const [colors, setColors] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/colors");
+        const data = await response.json();
+        setColors(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  //--- Fetch cities datas ----
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/cities");
+        const data = await response.json();
+        setCities(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  //--- Deal with the product (car) call ---
+
+  //Id's name
   const { name } = useParams();
-  const product = datas.find((p) => p.name === name);
+  const product = cars.find((p) => p.name === name);
+
+  //--- Handle clicks ----
 
   // State to track selected color and city
   const [selectedColor, setSelectedColor] = useState(null);
@@ -53,6 +109,7 @@ export default function Car() {
               <div className="list__div">
                 <h2>Colors:</h2>
                 <div className="list__container">
+                  {/* Map colors */}
                   {colors.map((item) => (
                     <button
                       key={item.id}
@@ -70,6 +127,7 @@ export default function Car() {
               <div className="list__div">
                 <h2>City:</h2>
                 <div className="list__container">
+                  {/* Map city */}
                   {cities.map((item) => {
                     return (
                       <button
@@ -88,12 +146,14 @@ export default function Car() {
               </div>
             </div>
             <div className="command__div">
+              {/* Command button */}
               <button className="btn" onClick={handleCommandClick}>
                 Command
               </button>
             </div>
           </section>
         ) : (
+          //Product not found
           <p>Product not found</p>
         )}
       </div>
