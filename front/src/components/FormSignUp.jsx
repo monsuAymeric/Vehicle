@@ -1,11 +1,6 @@
 import React, { useState, useRef } from "react";
 
 export default function FormSignUp() {
-  const inputRef = useRef(null);
-  const handleSubmitButton = () => {
-    alert(inputRef.current.value);
-  };
-
   const [formData, setFormData] = useState({
     lastname: "",
     firstname: "",
@@ -20,8 +15,13 @@ export default function FormSignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     // Add logic to handle form submission (e.g., API call, validation)
-    console.log("Form submitted:", formData);
+    // For simplicity, simulate a successful registration
+    setIsAuthenticated(true);
+
+    // Persist the authentication status in localStorage
+    localStorage.setItem("isAuthenticated", "true");
   };
   return (
     <form onSubmit={handleSubmit}>
