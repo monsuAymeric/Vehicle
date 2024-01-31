@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./User.css";
-import commands from "../datas/Command.json";
+// import commands from "../datas/Command.json";
 
 export default function User() {
+  //--- Fetch commands datas ----
+  const [commands, setCommands] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/command/:id");
+        const data = await response.json();
+        setCommands(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <main>
       <section>
