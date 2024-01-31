@@ -1,11 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 export default function FormSignIn() {
-  const inputRef = useRef(null);
-  const handleSubmitButton = () => {
-    alert(inputRef.current.value);
-  };
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -18,8 +13,13 @@ export default function FormSignIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     // Add logic to handle form submission (e.g., API call, validation)
-    console.log("Form submitted:", formData);
+    // For simplicity, simulate a successful login
+    setIsAuthenticated(true);
+
+    // Persist the authentication status in localStorage
+    localStorage.setItem("isAuthenticated", "true");
   };
   return (
     <form onSubmit={handleSubmit}>
