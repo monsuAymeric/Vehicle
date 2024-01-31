@@ -13,7 +13,7 @@ export default function Car() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/car/:id");
+        const response = await fetch("http://localhost:3000/car/:name");
         const data = await response.json();
         setCars(data);
       } catch (error) {
