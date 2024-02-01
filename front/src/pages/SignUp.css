@@ -1,0 +1,13 @@
+.signup__section {
+  gap: 50px;
+}
+.already__signup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.redirection__sign {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}

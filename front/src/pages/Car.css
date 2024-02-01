@@ -1,0 +1,60 @@
+.car__section > .card {
+  background-color: var(--color-third);
+  border-radius: 20px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.car__section > .card:hover img {
+  width: 100%;
+  height: 100%;
+}
+
+.car__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bubble {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--color-second);
+}
+
+.bubble__selected {
+  border: 2px solid var(--color-third);
+}
+
+.list__div {
+  margin-top: 50px;
+}
+.list__container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.command__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.selected {
+  background-color: var(--color-second);
+  color: var(--color-first);
+}
+
+@media (max-width: 600px) {
+  .list__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

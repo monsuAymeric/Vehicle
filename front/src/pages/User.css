@@ -1,0 +1,17 @@
+.user__container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+.user__infos {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}
+.user__commands {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 50px;
+}
