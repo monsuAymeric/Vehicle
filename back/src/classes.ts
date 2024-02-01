@@ -7,12 +7,6 @@ class Users {
   Lastname: string;
   Email: string;
   Password: string;
-  Login() {
-
-  };
-  CreateCommand() {
-
-  };
 
   constructor() {
     this.Id = 0;
@@ -29,15 +23,6 @@ class Command {
   IsValid: Boolean;
   PlaceDelivery: string;
   Status: string;
-  GetCommand() {
-
-  }
-  GetPlaceDelivery() {
-
-  }
-  UpdateStatus(Notifications) {
-
-  }
 
   constructor() {
     this.Id = 0;
@@ -57,15 +42,6 @@ abstract class Factory {
   Name: string;
   Engine: number;
   Color: string;
-  CreateCar() {
-
-  }
-  GetColor(Command) {
-
-  }
-  GetMotor(Command){
-
-  }
 
   constructor() {
     this.Id = 0;
@@ -107,8 +83,7 @@ interface Car {
   Name: string;
   Adress: string;
   Engine: number;
-  Price: DoubleRange;
-  getDetails(carId);
+  Price: number;
 }
 
 //--- Concrete Products ---
@@ -120,13 +95,7 @@ class CybertruckConcrete implements Car {
   Name: string;
   Adress: string;
   Engine: number;
-  Price: DoubleRange;
-  getDetails(Car) {
-    // Implement getDetails logic for Cybertruck
-    return (
-      `Cybertruck details:  id: ${this.Id} name: ${this.Name} engine: ${this.Engine} color: ${this.Color}`
-    );
-  }
+  Price: number;
 
   constructor() {
     this.Id = 0;
@@ -144,13 +113,7 @@ class ModelSConcrete implements Car {
   Name: string;
   Adress: string;
   Engine: number;
-  Price: DoubleRange;
-  getDetails(Car): string {
-    // Implement getDetails logic for Cybertruck
-    return (
-      `Cybertruck details:  id: ${this.Id} name: ${this.Name} engine: ${this.Engine} color: ${this.Color}`
-    );
-  }
+  Price: number;
 }
 
 //Concrete product ModelX
@@ -160,13 +123,7 @@ class ModelXConcrete implements Car {
   Name: string;
   Adress: string;
   Engine: number;
-  Price: DoubleRange;
-  getDetails(Car): string {
-    // Implement getDetails logic for Cybertruck
-    return (
-      `Cybertruck details:  id: ${this.Id} name: ${this.Name} engine: ${this.Engine} color: ${this.Color}`
-    );
-  }
+  Price: number;
 }
 
 //--- Decorator---
@@ -174,17 +131,4 @@ class ModelXConcrete implements Car {
 //Notifier class
 class Notifier {
   Notification: string = "";
-  Send(Notification): void {
-
-  };
 }
-
-// Object Cybertruck created example
-const cybertruckCreator = new CybertruckCreator();
-const myCybertruck = cybertruckCreator.factoryMethod();
-myCybertruck.Id = 1;
-myCybertruck.Name = "Cybertruck";
-myCybertruck.Engine = 200;
-myCybertruck.Color = "Grey";
-
-console.log(myCybertruck.getDetails(this.Car));
