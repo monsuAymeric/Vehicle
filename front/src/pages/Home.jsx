@@ -10,7 +10,6 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      mode: 'no-cors';
       try {
         const response = await fetch("http://localhost:3000/models");
         const data = await response.json();
@@ -39,7 +38,7 @@ export default function Home() {
             return (
               <article className="car__card" key={car.idmodel}>
                 <Link to={`/car/${car.name}`}>
-                  <Card image={car.image} alt={car.name} />
+                  <Card image={car.picture} alt={car.name} />
                 </Link>
                 <div className="car__infos">
                   <h2>{car.name}</h2>

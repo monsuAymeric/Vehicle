@@ -147,7 +147,7 @@ INSERT INTO
     Models (name, description, price, picture)
 VALUES
     ('Model-S', 
-    'The Tesla Model S is a battery electric full-size car with a liftback body style built by Tesla, Inc. since 2012.'
+    'The Tesla Model S is a battery electric full-size car with a liftback body style built by Tesla, Inc. since 2012.',
     49900,
     '../src/assets/Mega-Menu-Vehicles-Model-S.webp');
 
@@ -155,6 +155,6 @@ INSERT INTO
     Models (name, description, price, picture)
 VALUES
     ('Model-X', 
-    'The Tesla Model X is a battery electric mid-size luxury crossover SUV built by Tesla, Inc. since 2015.'
+    'The Tesla Model X is a battery electric mid-size luxury crossover SUV built by Tesla, Inc. since 2015.',
     101990,
     '../src/assets/Mega-Menu-Vehicles-Model-X.webp');
