@@ -1,45 +1,45 @@
 import React, { useState, useEffect } from "react";
 import "./Car.css";
 import { useParams } from "react-router-dom";
-import cars from "../datas/Products.json";
-import colors from "../datas/Colors.json";
+// import cars from "../datas/Products.json";
+// import colors from "../datas/Colors.json";
 import cities from "../datas/City.json";
 import Card from "../components/Card";
 
 export default function Car() {
-  // //--- Fetch car datas ----
-  // const [cars, setCars] = useState([]);
+  //--- Fetch car datas ----
+  const [cars, setCars] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch("http://localhost:3000/car/:name");
-  //       const data = await response.json();
-  //       setCars(data);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/models");
+        const data = await response.json();
+        setCars(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
-  // //--- Fetch colors datas ----
-  // const [colors, setColors] = useState([]);
+  //--- Fetch colors datas ----
+  const [colors, setColors] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch("http://localhost:3000/colors");
-  //       const data = await response.json();
-  //       setColors(data);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/colors");
+        const data = await response.json();
+        setColors(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   // //--- Fetch cities datas ----
   // const [cities, setCities] = useState([]);
@@ -121,8 +121,8 @@ export default function Car() {
       <div>
         {product ? (
           <section className="car__section">
-            <h1>{product.title}</h1>
-            <p>{product.text}</p>
+            <h1>{product.name}</h1>
+            <p>{product.description}</p>
             <Card image={product.image} name={product.name} />
             <div className="car__infos">
               <div className="list__div">
@@ -131,7 +131,7 @@ export default function Car() {
                   {/* Map colors */}
                   {colors.map((item) => (
                     <button
-                      key={item.id}
+                      key={item.idColor}
                       title={`Color: ${item.name}`}
                       className={
                         selectedColor === item.name ? "btn__selected" : "btn"
