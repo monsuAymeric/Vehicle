@@ -123,6 +123,7 @@ export default function Car() {
           <section className="car__section">
             <h1>{product.name}</h1>
             <p>{product.description}</p>
+            <h2>{product.price} €</h2>
             <Card image={product.picture} name={product.name} />
             <div className="car__infos">
               <div className="list__div">
