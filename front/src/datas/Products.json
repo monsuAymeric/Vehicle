@@ -4,6 +4,7 @@
     "title": "Cybertruck",
     "id": 1,
     "image": "../src/assets/Mega-Menu-Vehicles-Cybertruck-1x.webp",
+    "price": 92000,
     "text": "The Tesla Cybertruck is a battery electric full-size pickup truck built by Tesla, Inc. since 2023."
   },
   {
@@ -11,6 +12,7 @@
     "title": "Model S",
     "id": 2,
     "image": "../src/assets/Mega-Menu-Vehicles-Model-S.webp",
+    "price": 49900,
     "text": "The Tesla Model S is a battery electric full-size car with a liftback body style built by Tesla, Inc. since 2012."
   },
   {
@@ -18,6 +20,7 @@
     "title": "Model X",
     "id": 3,
     "image": "../src/assets/Mega-Menu-Vehicles-Model-X.webp",
+    "price": 101990,
     "text": "The Tesla Model X is a battery electric mid-size luxury crossover SUV built by Tesla, Inc. since 2015."
   }
 ]

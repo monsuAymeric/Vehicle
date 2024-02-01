@@ -28,6 +28,9 @@ CREATE TABLE
     Models (
         idModel SERIAL,
         name VARCHAR(20) NOT NULL,
+        description TEXT NOT NULL,
+        price INT NOT NULL,
+        picture TEXT NOT NULL,
         PRIMARY KEY (idModel)
     );
 
@@ -133,16 +136,25 @@ VALUES
 
 -- Create Models datas
 INSERT INTO
-    Models (name)
+    Models (name, description, price, picture)
 VALUES
-    ('Cybertruck');
+    ('Cybertruck', 
+    'The Tesla Cybertruck is a battery electric full-size pickup truck built by Tesla, Inc. since 2023.',
+    92000,
+    '../src/assets/Mega-Menu-Vehicles-Cybertruck-1x.webp');
 
 INSERT INTO
-    Models (name)
+    Models (name, description, price, picture)
 VALUES
-    ('Model-S');
+    ('Model-S', 
+    'The Tesla Model S is a battery electric full-size car with a liftback body style built by Tesla, Inc. since 2012.'
+    49900,
+    '../src/assets/Mega-Menu-Vehicles-Model-S.webp');
 
 INSERT INTO
-    Models (name)
+    Models (name, description, price, picture)
 VALUES
-    ('Model-X');
+    ('Model-X', 
+    'The Tesla Model X is a battery electric mid-size luxury crossover SUV built by Tesla, Inc. since 2015.'
+    101990,
+    '../src/assets/Mega-Menu-Vehicles-Model-X.webp');
