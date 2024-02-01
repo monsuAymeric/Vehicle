@@ -1,62 +1,62 @@
 import React, { useState, useEffect } from "react";
 import "./Car.css";
 import { useParams } from "react-router-dom";
-// import datas from "../datas/Products.json";
-// import colors from "../datas/Colors.json";
-// import cities from "../datas/City.json";
+import cars from "../datas/Products.json";
+import colors from "../datas/Colors.json";
+import cities from "../datas/City.json";
 import Card from "../components/Card";
 
 export default function Car() {
-  //--- Fetch car datas ----
-  const [cars, setCars] = useState([]);
+  // //--- Fetch car datas ----
+  // const [cars, setCars] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/car/:name");
-        const data = await response.json();
-        setCars(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:3000/car/:name");
+  //       const data = await response.json();
+  //       setCars(data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
-  //--- Fetch colors datas ----
-  const [colors, setColors] = useState([]);
+  // //--- Fetch colors datas ----
+  // const [colors, setColors] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/colors");
-        const data = await response.json();
-        setColors(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:3000/colors");
+  //       const data = await response.json();
+  //       setColors(data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
-  //--- Fetch cities datas ----
-  const [cities, setCities] = useState([]);
+  // //--- Fetch cities datas ----
+  // const [cities, setCities] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/cities");
-        const data = await response.json();
-        setCities(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:3000/cities");
+  //       const data = await response.json();
+  //       setCities(data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   //--- Deal with the product (car) call ---
 

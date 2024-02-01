@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-// import datas from "../datas/Products.json";
+import cars from "../datas/Products.json";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  //--- Fetch car datas ----
-  const [cars, setCars] = useState([]);
+  // //--- Fetch car datas ----
+  // const [cars, setCars] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/car");
-        const data = await response.json();
-        setCars(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:3000/car");
+  //       const data = await response.json();
+  //       setCars(data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <main>
