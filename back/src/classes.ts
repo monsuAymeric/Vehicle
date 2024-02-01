@@ -102,6 +102,7 @@ class CybertruckConcrete implements Car {
     this.Name = "";
     this.Engine = 0;
     this.Color = "";
+    this.Price = 0;
   }
 }
 
@@ -114,6 +115,14 @@ class ModelSConcrete implements Car {
   Adress: string;
   Engine: number;
   Price: number;
+
+  constructor() {
+    this.Id = 0;
+    this.Name = "";
+    this.Engine = 0;
+    this.Color = "";
+    this.Price = 0;
+  }
 }
 
 //Concrete product ModelX
@@ -124,6 +133,14 @@ class ModelXConcrete implements Car {
   Adress: string;
   Engine: number;
   Price: number;
+
+  constructor() {
+    this.Id = 0;
+    this.Name = "";
+    this.Engine = 0;
+    this.Color = "";
+    this.Price = 0;
+  }
 }
 
 //--- Decorator---
