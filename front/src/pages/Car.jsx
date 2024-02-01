@@ -131,7 +131,7 @@ export default function Car() {
                   {/* Map colors */}
                   {colors.map((item) => (
                     <button
-                      key={item.idColor}
+                      key={item.idcolor}
                       title={`Color: ${item.name}`}
                       className={
                         selectedColor === item.name ? "btn__selected" : "btn"
@@ -150,7 +150,7 @@ export default function Car() {
                   {cities.map((item) => {
                     return (
                       <button
-                        key={item.idAdress}
+                        key={item.idadress}
                         title={`City: ${item.name}`}
                         className={
                           selectedCity === item.name ? "btn__selected" : "btn"
