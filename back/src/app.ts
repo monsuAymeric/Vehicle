@@ -67,6 +67,17 @@ app.get("/colors", async (_req, res) => {
     res.status(500).json({ error: "Erreur serveur" });
   }
 });
+// Select Adresses
+app.get("/adress", async (_req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM adress");
+    console.log("Données reçues de la base de données:", result.rows);
+    res.json(result.rows);
+  } catch (error) {
+    console.error("Erreur lors de la récupération des données:", error);
+    res.status(500).json({ error: "Erreur serveur" });
+  }
+});
 
 // Close pool
 process.on("exit", () => {

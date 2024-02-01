@@ -3,7 +3,7 @@ import "./Car.css";
 import { useParams } from "react-router-dom";
 // import cars from "../datas/Products.json";
 // import colors from "../datas/Colors.json";
-import cities from "../datas/City.json";
+// import cities from "../datas/City.json";
 import Card from "../components/Card";
 
 export default function Car() {
@@ -41,22 +41,22 @@ export default function Car() {
     fetchData();
   }, []);
 
-  // //--- Fetch cities datas ----
-  // const [cities, setCities] = useState([]);
+  //--- Fetch cities datas ----
+  const [cities, setCities] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch("http://localhost:3000/cities");
-  //       const data = await response.json();
-  //       setCities(data);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/adress");
+        const data = await response.json();
+        setCities(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   //--- Deal with the product (car) call ---
 
@@ -150,7 +150,7 @@ export default function Car() {
                   {cities.map((item) => {
                     return (
                       <button
-                        key={item.id}
+                        key={item.idAdress}
                         title={`City: ${item.name}`}
                         className={
                           selectedCity === item.name ? "btn__selected" : "btn"
