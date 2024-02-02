@@ -49,11 +49,11 @@ app.use(
 app.get("/users", async (_req, res) => {
   try {
     const result = await pool.query("SELECT * FROM users");
-    console.log("Données reçues de la base de données:", result.rows);
+    console.log("Datas from database:", result.rows);
     res.json(result.rows);
   } catch (error) {
-    console.error("Erreur lors de la récupération des données:", error);
-    res.status(500).json({ error: "Erreur serveur" });
+    console.error("Fetch error datas:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
 
@@ -61,33 +61,33 @@ app.get("/users", async (_req, res) => {
 app.get("/models", async (_req, res) => {
   try {
     const result = await pool.query("SELECT * FROM models");
-    console.log("Données reçues de la base de données:", result.rows);
+    console.log("Datas from database:", result.rows);
     res.json(result.rows);
   } catch (error) {
-    console.error("Erreur lors de la récupération des données:", error);
-    res.status(500).json({ error: "Erreur serveur" });
+    console.error("Fetch error datas:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
 // Select Colors
 app.get("/colors", async (_req, res) => {
   try {
     const result = await pool.query("SELECT * FROM colors");
-    console.log("Données reçues de la base de données:", result.rows);
+    console.log("Datas from database:", result.rows);
     res.json(result.rows);
   } catch (error) {
-    console.error("Erreur lors de la récupération des données:", error);
-    res.status(500).json({ error: "Erreur serveur" });
+    console.error("Fetch error datas:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
 // Select Adresses
 app.get("/adress", async (_req, res) => {
   try {
     const result = await pool.query("SELECT * FROM adress");
-    console.log("Données reçues de la base de données:", result.rows);
+    console.log("Datas from database:", result.rows);
     res.json(result.rows);
   } catch (error) {
-    console.error("Erreur lors de la récupération des données:", error);
-    res.status(500).json({ error: "Erreur serveur" });
+    console.error("Fetch error datas:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
 
