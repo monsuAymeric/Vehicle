@@ -12,7 +12,7 @@ export default function User() {
         const isAuthenticated = true; // Replace with your authentication logic
 
         if (isAuthenticated) {
-          const response = await fetch("http://localhost:3000/user-info"); // Replace with your actual user info endpoint
+          const response = await fetch("http://localhost:3000/users"); // Replace with your actual user info endpoint
           const userData = await response.json();
           setUser(userData);
         } else {

@@ -45,6 +45,18 @@ app.use(
   })
 );
 
+//Select User
+app.get("/users", async (_req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM users");
+    console.log("Données reçues de la base de données:", result.rows);
+    res.json(result.rows);
+  } catch (error) {
+    console.error("Erreur lors de la récupération des données:", error);
+    res.status(500).json({ error: "Erreur serveur" });
+  }
+});
+
 // Select models
 app.get("/models", async (_req, res) => {
   try {
