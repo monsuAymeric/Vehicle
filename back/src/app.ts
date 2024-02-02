@@ -5,6 +5,7 @@ import cors from "cors";
 
 const app = express();
 const port = 3000;
+app.use(express.json());
 
 app.use(cors());
 
@@ -50,44 +51,67 @@ app.use(
 app.get("/models", async (_req, res) => {
   try {
     const result = await pool.query("SELECT * FROM models");
-    console.log("Données reçues de la base de données:", result.rows);
+    console.log("Data received from the database:", result.rows);
     res.json(result.rows);
   } catch (error) {
-    console.error("Erreur lors de la récupération des données:", error);
-    res.status(500).json({ error: "Erreur serveur" });
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
 // Select Colors
 app.get("/colors", async (_req, res) => {
   try {
     const result = await pool.query("SELECT * FROM colors");
-    console.log("Données reçues de la base de données:", result.rows);
+    console.log("Data received from the database:", result.rows);
     res.json(result.rows);
   } catch (error) {
-    console.error("Erreur lors de la récupération des données:", error);
-    res.status(500).json({ error: "Erreur serveur" });
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
 // Select Adresses
 app.get("/adress", async (_req, res) => {
   try {
     const result = await pool.query("SELECT * FROM adress");
-    console.log("Données reçues de la base de données:", result.rows);
+    console.log("Data received from the database:", result.rows);
     res.json(result.rows);
   } catch (error) {
-    console.error("Erreur lors de la récupération des données:", error);
-    res.status(500).json({ error: "Erreur serveur" });
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
 // Select User
 app.get("/users", async (_req, res) => {
   try {
     const result = await pool.query("SELECT * FROM users");
-    console.log("Données reçues de la base de données:", result.rows);
+    console.log("Data received from the database:", result.rows);
     res.json(result.rows);
   } catch (error) {
-    console.error("Erreur lors de la récupération des données:", error);
-    res.status(500).json({ error: "Erreur serveur" });
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// Create a car
+app.post("/createCar", async (req, res) => {
+  try {
+    const { color, name, address, engine, price } = req.body;
+
+    // Use factory to create a car
+    const modelSCreator = new ModelSCreator();
+    const newCar = modelSCreator.createCar(color, name, address, engine, price);
+
+    // Insert SQL to create object in the database
+    const result = await pool.query(
+      "INSERT INTO models (color, name, address, engine, price) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [newCar.Color, newCar.Name, newCar.Adress, newCar.Engine, newCar.Price]
+    );
+
+    console.log("Car created:", newCar);
+    res.status(201).json(newCar);
+  } catch (error) {
+    console.error("Error during car creation:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
 
