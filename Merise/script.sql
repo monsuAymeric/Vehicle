@@ -9,51 +9,48 @@ CREATE TABLE Users(
 );
 
 CREATE TABLE Colors(
-   idColor SERIAL,
+   id_color SERIAL,
    name VARCHAR(10) NOT NULL,
-   PRIMARY KEY(idColor)
+   PRIMARY KEY(id_color)
 );
 
 CREATE TABLE Engine(
-   idEngine SERIAL,
+   id_engine SERIAL,
    horsePower INTEGER NOT NULL,
-   PRIMARY KEY(idEngine)
+   PRIMARY KEY(id_engine)
 );
 
 CREATE TABLE Models(
-   idModel SERIAL,
+   id_model SERIAL,
    name VARCHAR(20) NOT NULL,
-   PRIMARY KEY(idModel)
+   PRIMARY KEY(id_model)
 );
 
 CREATE TABLE Adress(
-   idAdress SERIAL,
+   id_adress SERIAL,
    name VARCHAR(20) NOT NULL,
-   PRIMARY KEY(idAdress)
+   PRIMARY KEY(id_adress)
 );
 
 CREATE TABLE Cars(
    idCar SERIAL,
-   idColor INTEGER NOT NULL,
-   idModel INTEGER NOT NULL,
-   idAdress INTEGER NOT NULL,
-   idEngine INTEGER NOT NULL,
+   id_color INTEGER NOT NULL,
+   id_model INTEGER NOT NULL,
+   id_adress INTEGER NOT NULL,
+   id_engine INTEGER NOT NULL,
    PRIMARY KEY(idCar),
-   FOREIGN KEY(idColor) REFERENCES Colors(idColor),
-   FOREIGN KEY(idModel) REFERENCES Models(idModel),
-   FOREIGN KEY(idAdress) REFERENCES Adress(idAdress),
-   FOREIGN KEY(idEngine) REFERENCES Engine(idEngine)
+   FOREIGN KEY(id_color) REFERENCES Colors(id_color),
+   FOREIGN KEY(id_model) REFERENCES Models(id_model),
+   FOREIGN KEY(id_adress) REFERENCES Adress(id_adress),
+   FOREIGN KEY(id_engine) REFERENCES Engine(id_engine)
 );
 
-CREATE TABLE Command(
-   idCommand SERIAL,
+CREATE TABLE Commande(
+   idUser INTEGER,
+   idCar INTEGER,
    isValid BOOLEAN NOT NULL,
-   placeDelivery VARCHAR(50) NOT NULL,
-   status VARCHAR(20) NOT NULL,
-   idCar INTEGER NOT NULL,
-   idUser INTEGER NOT NULL,
-   PRIMARY KEY(idCommand),
-   UNIQUE(idCar),
-   FOREIGN KEY(idCar) REFERENCES Cars(idCar),
-   FOREIGN KEY(idUser) REFERENCES Users(idUser)
+   PRIMARY KEY(idUser, idCar),
+   FOREIGN KEY(idUser) REFERENCES Users(idUser),
+   FOREIGN KEY(idCar) REFERENCES Cars(idCar)
 );
+
