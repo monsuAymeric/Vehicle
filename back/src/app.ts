@@ -8,6 +8,7 @@ const port = 3000;
 
 app.use(cors());
 
+//Database conection
 const pool = new Pool({
   user: "postgres",
   host: "localhost",
