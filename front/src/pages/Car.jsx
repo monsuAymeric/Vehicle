@@ -78,41 +78,46 @@ export default function Car() {
     setSelectedCity(city === selectedCity ? null : city);
   };
 
-  // State to track user authentication
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    // Simulating authentication logic (replace with actual authentication check)
-    const checkAuthentication = () => {
-      // Replace the following line with your actual authentication check
-      const userIsAuthenticated = true; /* Your authentication check */
-      setIsAuthenticated(userIsAuthenticated);
-    };
-
-    checkAuthentication();
-  }, []);
-
   const handleCommandClick = () => {
-    if (isAuthenticated) {
-      if (selectedColor && selectedCity) {
-        console.log(
-          "Command clicked with color:",
-          selectedColor,
-          "and city:",
-          selectedCity
-        );
-        alert("Command passed.");
-      } else {
-        console.log(
-          "Please select both color and city before clicking the command button."
-        );
-        alert(
-          "Please select both color and city before clicking the command button."
-        );
-      }
+    if (selectedColor && selectedCity) {
+      console.log(
+        "Command clicked with color:",
+        selectedColor,
+        "and city:",
+        selectedCity
+      );
+
+      // Prepare the car object
+      const newCar = {
+        //color: selectedColor,
+        name: product.name,
+        //address: selectedCity,
+      };
+
+      // Send a POST request to create the car
+      fetch("http://localhost:3000/createCar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newCar),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Car created:", data);
+          alert("Command passed.");
+        })
+        .catch((error) => {
+          console.error("Error creating car:", error);
+          alert("Error creating car. Please try again.");
+        });
     } else {
-      // User not authenticated, show an alert
-      alert("You are not connected, please sign in to command.");
+      console.log(
+        "Please select both color and city before clicking the command button."
+      );
+      alert(
+        "Please select both color and city before clicking the command button."
+      );
     }
   };
 

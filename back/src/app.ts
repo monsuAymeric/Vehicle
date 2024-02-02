@@ -95,17 +95,11 @@ app.get("/users", async (_req, res) => {
 // Create a car
 app.post("/createCar", async (req, res) => {
   try {
-    const { color, name, address, engine, price } = req.body;
+    const { name } = req.body;
 
     // Use factory to create a car
     const modelSCreator = new ModelSCreator();
-    const newCar = modelSCreator.createCar(color, name, address, engine, price);
-
-    // Insert SQL to create object in the database
-    const result = await pool.query(
-      "INSERT INTO models (color, name, address, engine, price) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-      [newCar.Color, newCar.Name, newCar.Adress, newCar.Engine, newCar.Price]
-    );
+    const newCar = modelSCreator.createCar(name);
 
     console.log("Car created:", newCar);
     res.status(201).json(newCar);
